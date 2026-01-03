@@ -1,0 +1,26 @@
+import numpy as np
+from PIL import Image
+from pathlib import Path
+from ultralytics import YOLO
+from .model_downloader import download_model_if_missing
+
+CURRENT_DIRECTORY = Path().absolute()
+
+MODELS_DIRECTORY = CURRENT_DIRECTORY / "models"
+MODELS_DIRECTORY.mkdir(exist_ok=True)
+
+IMAGES_DIRECTORY = CURRENT_DIRECTORY / "images"
+IMAGES_DIRECTORY.mkdir(exist_ok=True)
+
+download_model_if_missing("crosswalk.pt", MODELS_DIRECTORY)
+
+YOLO_MODELS = {
+    "yolo11x": YOLO(MODELS_DIRECTORY / "yolo11x.pt"),
+    "crosswalk": YOLO(MODELS_DIRECTORY / "crosswalk.pt"),
+    "yolo11x-seg": YOLO(MODELS_DIRECTORY / "yolo11x-seg.pt"),
+    "yolov8x-oiv7": YOLO(MODELS_DIRECTORY / "yolov8x-oiv7.pt"),
+}
+
+test_image = Image.new("RGB", (300, 300), color="white")
+test_image = np.asarray(test_image)
+YOLO_MODELS["yolo11x"].predict(test_image)
