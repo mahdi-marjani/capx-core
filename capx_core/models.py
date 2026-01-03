@@ -9,9 +9,6 @@ CURRENT_DIRECTORY = Path().absolute()
 MODELS_DIRECTORY = CURRENT_DIRECTORY / "models"
 MODELS_DIRECTORY.mkdir(exist_ok=True)
 
-IMAGES_DIRECTORY = CURRENT_DIRECTORY / "images"
-IMAGES_DIRECTORY.mkdir(exist_ok=True)
-
 download_model_if_missing("crosswalk.pt", MODELS_DIRECTORY)
 
 YOLO_MODELS = {
