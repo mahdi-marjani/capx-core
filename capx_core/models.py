@@ -1,5 +1,3 @@
-import numpy as np
-from PIL import Image
 from pathlib import Path
 from ultralytics import YOLO
 from .model_downloader import download_model_if_missing
@@ -17,7 +15,3 @@ YOLO_MODELS = {
     "yolo11x-seg": YOLO(MODELS_DIRECTORY / "yolo11x-seg.pt"),
     "yolov8x-oiv7": YOLO(MODELS_DIRECTORY / "yolov8x-oiv7.pt"),
 }
-
-test_image = Image.new("RGB", (300, 300), color="white")
-test_image = np.asarray(test_image)
-YOLO_MODELS["yolo11x"].predict(test_image)
