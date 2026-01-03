@@ -2,9 +2,9 @@ from pathlib import Path
 from ultralytics import YOLO
 from .model_downloader import download_model_if_missing
 
-CURRENT_DIRECTORY = Path().absolute()
+ROOT_DIRECTORY = Path(__file__).parent.parent
 
-MODELS_DIRECTORY = CURRENT_DIRECTORY / "models"
+MODELS_DIRECTORY = ROOT_DIRECTORY / "models"
 MODELS_DIRECTORY.mkdir(exist_ok=True)
 
 download_model_if_missing("crosswalk.pt", MODELS_DIRECTORY)
