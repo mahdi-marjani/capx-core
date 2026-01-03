@@ -24,3 +24,9 @@ dependencies = [
 
 [tool.setuptools]
 packages = ["capx_core"]
+
+[project.urls]
+Homepage = "https://github.com/mahdi-marjani/capx-core"
+Documentation = "https://github.com/mahdi-marjani/capx-core"
+Repository = "https://github.com/mahdi-marjani/capx-core.git"
+Issues = "https://github.com/mahdi-marjani/capx-core/issues"
