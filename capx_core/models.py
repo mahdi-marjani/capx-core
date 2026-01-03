@@ -2,7 +2,7 @@ from pathlib import Path
 from ultralytics import YOLO
 from .model_downloader import download_model_if_missing
 
-ROOT_DIRECTORY = Path(__file__).parent.parent
+ROOT_DIRECTORY = Path().absolute()
 
 MODELS_DIRECTORY = ROOT_DIRECTORY / "models"
 MODELS_DIRECTORY.mkdir(exist_ok=True)
