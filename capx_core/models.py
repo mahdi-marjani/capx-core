@@ -15,3 +15,17 @@ YOLO_MODELS = {
     "yolo11x-seg": YOLO(MODELS_DIRECTORY / "yolo11x-seg.pt"),
     "yolov8x-oiv7": YOLO(MODELS_DIRECTORY / "yolov8x-oiv7.pt"),
 }
+
+AVAILABLE_MODELS = [
+    "bicycle",
+    "bus",
+    "tractor",
+    "boat",
+    "car",
+    "hydrant",
+    "motorcycle",
+    "traffic",
+    "crosswalk",
+    "stair",
+    "taxi",
+]
