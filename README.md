@@ -1,6 +1,6 @@
 # rcap-core
 
-Core AI engine for solving reCAPTCHA v2 image challenges.
+Core AI engine of [rcap](https://github.com/mahdi-marjani/rcap) for solving reCAPTCHA v2 image challenges.
 
 ## Install
 
